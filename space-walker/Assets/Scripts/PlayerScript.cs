@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-    public float movementSpeed = 0.05f;
+    public float movementSpeed = 50f;
     public float maxRayDistance = 100.0f;
 
-    public Transform light;
+    private Vector3 move;
+
+    public Transform wave;
 
     // Use this for initialization
     void Start () {
@@ -35,44 +37,8 @@ public class PlayerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        //Movement
-        Vector3 newPos = transform.position;
-
-        //Up
-            if (Input.GetKey(KeyCode.W))
-            {
-                newPos += new Vector3(
-                    0,
-                    0,
-                    movementSpeed
-                    );
-            }
-        //Left
-            if (Input.GetKey(KeyCode.A))
-            {
-                newPos += new Vector3(
-                    -movementSpeed,
-                    0,
-                    0);
-            }
-        //Down
-            if (Input.GetKey(KeyCode.S))
-            {
-                newPos += new Vector3(
-                    0,
-                    0,
-                    -movementSpeed);
-            }
-        //Right
-            if (Input.GetKey(KeyCode.D))
-            {
-                newPos += new Vector3(
-                    movementSpeed,
-                    0,
-                    0);
-            }
-
-        transform.position = newPos;
+        transform.Translate(move * movementSpeed * Time.deltaTime);
 	}
 }
