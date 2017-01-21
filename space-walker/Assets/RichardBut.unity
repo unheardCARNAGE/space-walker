@@ -791,7 +791,7 @@ MonoBehaviour:
   yDir: 0
   zDir: -15
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!1 &517468831
 GameObject:
@@ -827,7 +827,7 @@ MonoBehaviour:
   yDir: 0
   zDir: 0
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!23 &517468833
 MeshRenderer:
@@ -897,11 +897,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4204129177355706, guid: 5374ee45129a40d45ac238373465410c,
     type: 2}
   m_PrefabInternal: {fileID: 1344804739}
---- !u!1 &596933423 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1088645404789550, guid: c5edec49c6e93ae4994a2b7b4fbd22b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1022894380}
 --- !u!4 &596933428 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4667166890545026, guid: c5edec49c6e93ae4994a2b7b4fbd22b1,
@@ -924,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleAry:
-  - {fileID: 1155120110}
+  - {fileID: 0}
   clickable: 0
 --- !u!1 &656605207
 GameObject:
@@ -1297,7 +1292,7 @@ MonoBehaviour:
   yDir: 0
   zDir: 15
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!23 &790347598
 MeshRenderer:
@@ -1429,7 +1424,7 @@ MonoBehaviour:
   yDir: 0
   zDir: -15
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!23 &853839018
 MeshRenderer:
@@ -1918,8 +1913,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yRot: 90
   smooth: 3
-  pressed: 0
-  originalYRot: 0
+  running: 0
+  timePassed: 0
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1174141709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,10 +2204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleAry:
-  - {fileID: 596933423}
-  - {fileID: 853839014}
-  - {fileID: 1630634427}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   clickable: 0
+  buttonNotification: {fileID: 0}
 --- !u!23 &1249009940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2633,7 +2630,7 @@ MonoBehaviour:
   yDir: 0
   zDir: 0
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!1 &1381976158
 GameObject:
@@ -3089,7 +3086,7 @@ MonoBehaviour:
   yDir: 0
   zDir: 15
   movementSpeed: 3
-  pressed: 0
+  running: 0
   active: 0
 --- !u!23 &1630634431
 MeshRenderer:
@@ -3255,14 +3252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313c00c1de2c73c439016b90ad7771d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycle: 8
+  totalCycleTime: 8
   warmupTime: 5
   flashDuration: 0.5
   cooldown: 0.5
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalBrightness: 1
+  warmedUpColor: {r: 1, g: 0, b: 0, a: 1}
   warmedUpBrightness: 2
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashBrightness: 10
-  timer: 10
-  resetTimer: 10
+  onFlashEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!108 &1659679020
 Light:
   m_ObjectHideFlags: 0
@@ -3535,9 +3539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleAry:
-  - {fileID: 1373095710}
-  - {fileID: 517468831}
+  - {fileID: 0}
+  - {fileID: 0}
   clickable: 0
+  buttonNotification: {fileID: 0}
 --- !u!23 &2072270114
 MeshRenderer:
   m_ObjectHideFlags: 0

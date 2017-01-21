@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotationButton : MonoBehaviour {
-    public GameObject[] obstacleAry;
+    public ObstacleScript[] obstacleAry;
     public bool clickable;
 
     void OnMouseUp()
@@ -13,12 +13,9 @@ public class RotationButton : MonoBehaviour {
             return;
         }
 
-        foreach (GameObject obstacle in obstacleAry)
+        foreach (ObstacleScript obstacle in obstacleAry)
         {
-            if (!obstacle.GetComponent<RotationScript>().pressed)
-            {
-                obstacle.GetComponent<RotationScript>().pressed = true;
-            }
+            obstacle.running = true;
         }
     }
 

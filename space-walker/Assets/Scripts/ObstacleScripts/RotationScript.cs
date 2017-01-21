@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotationScript : MonoBehaviour {
     public float yRot = 90f;
     public float smooth = 3f;
-    public bool pressed = false;
+    public bool running = false;
     public float timePassed = 0f;
 
     public Quaternion originalRot;
@@ -18,7 +18,7 @@ public class RotationScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (pressed)
+        if (running)
         {
             timePassed += Time.deltaTime;
             transform.rotation = Quaternion.Slerp(originalRot, Quaternion.Euler(0, originalRot.eulerAngles.y + yRot, 0), timePassed);
@@ -29,7 +29,7 @@ public class RotationScript : MonoBehaviour {
             {
                 originalRot = transform.rotation;
                 timePassed = 0f;
-                pressed = false;
+                running = false;
             }
         }
     }

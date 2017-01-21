@@ -11,30 +11,24 @@ public class PlayerScript : MonoBehaviour {
 
     public Transform wave;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
-    void FixedUpdate()
-    {
-        // change angle in accordance to incoming wave
-		Ray ray = new Ray(transform.position, -wave.transform.forward);
-
-        RaycastHit hit;
-
-		Debug.DrawRay(transform.position, -wave.transform.forward * maxRayDistance, Color.red);
-
-        if (!Physics.Raycast(ray, out hit, maxRayDistance))
-        {
-			Debug.Log("Player dies");
-        }
-    }
-
     // Update is called once per frame
     void Update () {
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         transform.Translate(move * movementSpeed * Time.deltaTime);
 	}
+
+    public void CreateRay()
+    {
+        Ray ray = new Ray(transform.position, -wave.transform.forward);
+
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, -wave.transform.forward * maxRayDistance, Color.red);
+
+        if (!Physics.Raycast(ray, out hit, maxRayDistance))
+        {
+            Debug.Log("Player dies");
+        }
+    }
 }

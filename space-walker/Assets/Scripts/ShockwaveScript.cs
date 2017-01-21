@@ -31,12 +31,14 @@ public class ShockwaveScript : MonoBehaviour {
     [SerializeField]
     UnityEvent onFlashEvent;
 
+    PlayerScript player;
     Light light;
     float currentTime = 0f;
     bool flashpointDoneThisCycle = false;
 
     void Start()
     {
+        player = FindObjectOfType<PlayerScript>();
         light = GetComponent<Light>();
     }
 
@@ -110,5 +112,6 @@ public class ShockwaveScript : MonoBehaviour {
     {
         if (onFlashEvent != null)
             onFlashEvent.Invoke();
+        player.CreateRay();
     }
 }

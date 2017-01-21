@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RichardButton : MonoBehaviour {
-    public GameObject[] obstacleAry;
+    public ObstacleScript[] obstacleAry;
     public bool clickable;
 
 
@@ -18,11 +18,8 @@ public class RichardButton : MonoBehaviour {
             return;
         }
 
-        foreach (GameObject obstacle in obstacleAry) {
-            if (!obstacle.GetComponent<ObstacleScript>().pressed)
-            {
-                obstacle.GetComponent<ObstacleScript>().pressed = true;
-            }
+        foreach (ObstacleScript obstacle in obstacleAry) {
+            obstacle.running = true;
         }
     }
 

@@ -11,7 +11,7 @@ public class ObstacleScript : MonoBehaviour {
     private float timePassed;
     private Vector3 originalPos;
 
-    public bool pressed = false;
+    public bool running = false;
     public bool active;
 
     // Use this for initialization
@@ -28,7 +28,7 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (pressed)
+        if (running)
         {
             if (active)
             {
@@ -43,7 +43,7 @@ public class ObstacleScript : MonoBehaviour {
 
             if (timePassed > 1.0f)
             {
-                pressed = false;
+                running = false;
                 active = !active;
                 timePassed = 0.0f;
             }
