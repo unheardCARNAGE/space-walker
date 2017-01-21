@@ -6,7 +6,7 @@ public class RichardButton : MonoBehaviour {
     public GameObject[] obstacleAry;
     public bool clickable;
     
-    void OnMouseDown()
+    void OnMouseUp()
     {
         if (!clickable)
         {
@@ -14,9 +14,9 @@ public class RichardButton : MonoBehaviour {
         }
 
         foreach (GameObject obstacle in obstacleAry) {
-            if (!obstacle.GetComponent<ObstacleActivated>().activated)
+            if (!obstacle.GetComponent<ObstacleScript>().pressed)
             {
-                obstacle.GetComponent<ObstacleActivated>().activated = true;
+                obstacle.GetComponent<ObstacleScript>().pressed = true;
             }
         }
     }
