@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 561459303}
   - component: {fileID: 561459302}
   - component: {fileID: 561459301}
+  - component: {fileID: 561459304}
   - component: {fileID: 561459300}
   - component: {fileID: 561459299}
   m_Layer: 0
@@ -1130,6 +1131,7 @@ MonoBehaviour:
   - {fileID: 1639166067}
   - {fileID: 790347594}
   - {fileID: 376634541}
+  clickable: 0
 --- !u!23 &561459300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1193,6 +1195,18 @@ Transform:
   m_Father: {fileID: 940476807}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &561459304
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561459298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &596933423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2447,7 @@ GameObject:
   - component: {fileID: 1249009938}
   - component: {fileID: 1249009942}
   - component: {fileID: 1249009941}
+  - component: {fileID: 1249009943}
   - component: {fileID: 1249009940}
   - component: {fileID: 1249009939}
   m_Layer: 0
@@ -2470,6 +2485,7 @@ MonoBehaviour:
   - {fileID: 596933423}
   - {fileID: 853839014}
   - {fileID: 1630634427}
+  clickable: 0
 --- !u!23 &1249009940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2520,6 +2536,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1249009937}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &1249009943
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249009937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0.000011444092, y: 0, z: -0.0000021457672}
 --- !u!1 &1251669215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,6 +3740,7 @@ GameObject:
   - component: {fileID: 2072270117}
   - component: {fileID: 2072270116}
   - component: {fileID: 2072270115}
+  - component: {fileID: 2072270118}
   - component: {fileID: 2072270114}
   - component: {fileID: 2072270113}
   m_Layer: 0
@@ -3735,6 +3764,7 @@ MonoBehaviour:
   obstacleAry:
   - {fileID: 1373095710}
   - {fileID: 517468831}
+  clickable: 0
 --- !u!23 &2072270114
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3798,6 +3828,18 @@ Transform:
   m_Father: {fileID: 1322054512}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2072270118
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072270112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: -0.0000076293945, y: 0, z: 0}
 --- !u!1 &2125618982
 GameObject:
   m_ObjectHideFlags: 0
