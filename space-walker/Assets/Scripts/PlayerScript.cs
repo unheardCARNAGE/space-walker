@@ -27,7 +27,16 @@ public class PlayerScript : MonoBehaviour {
 
         if (!Physics.Raycast(ray, out hit, maxRayDistance))
         {
-            Debug.Log("Player dies");
+            try
+            {
+                Debug.Log("tag: " + hit.collider.tag);
+            }
+            catch
+            {
+                Debug.Log("Player dies");
+            }
+            
+            
         }
     }
 

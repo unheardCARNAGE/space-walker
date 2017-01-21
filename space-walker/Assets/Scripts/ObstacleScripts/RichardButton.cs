@@ -5,6 +5,11 @@ using UnityEngine;
 public class RichardButton : MonoBehaviour {
     public GameObject[] obstacleAry;
     public bool clickable;
+
+
+    //Temporary, Placeholder
+    public GameObject buttonNotification;
+    private GameObject button_notification;
     
     void OnMouseUp()
     {
@@ -26,6 +31,9 @@ public class RichardButton : MonoBehaviour {
         if (coll.gameObject.name == "Player")
         {
             clickable = true;
+
+            //Temporary, Placeholder
+            button_notification = Instantiate<GameObject>(buttonNotification, gameObject.transform.position, Quaternion.identity);
         }
     }
 
@@ -34,6 +42,9 @@ public class RichardButton : MonoBehaviour {
         if (coll.gameObject.name == "Player")
         {
             clickable = false;
+
+            //Temporary, Placeholder
+            Destroy(button_notification, 1.0f);
         }
     }
 }
