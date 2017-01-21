@@ -18,20 +18,16 @@ public class PlayerScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        //Ray casting
-
-        //Ray ray = new Ray(transform.position, -light.transform.forward);
+        // change angle in accordance to incoming wave
         Ray ray = new Ray(transform.position, transform.position + Vector3.forward * maxRayDistance + Vector3.up * maxRayDistance);
 
         RaycastHit hit;
 
-        //Debug.DrawLine()
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * maxRayDistance + Vector3.up * maxRayDistance, Color.red);
 
-        if (Physics.Raycast(ray, out hit, maxRayDistance))
+        if (!Physics.Raycast(ray, out hit, maxRayDistance))
         {
             Debug.Log("Player dies");
-            Debug.DrawLine(transform.position, transform.position + Vector3.forward * maxRayDistance, Color.blue, 100f, false);
         }
     }
 
