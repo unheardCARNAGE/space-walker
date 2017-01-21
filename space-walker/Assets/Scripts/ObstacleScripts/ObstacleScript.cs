@@ -42,7 +42,7 @@ public class ObstacleScript : MonoBehaviour {
 
             if (timePassed > 1.0f)
             {
-                GetComponent<ObstacleActivated>().active = false;
+                GetComponent<ObstacleActivated>().activated = false;
                 active = !active;
                 timePassed = 0.0f;
             }
