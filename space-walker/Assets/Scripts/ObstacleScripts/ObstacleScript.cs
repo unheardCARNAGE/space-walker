@@ -11,6 +11,7 @@ public class ObstacleScript : MonoBehaviour {
     private float timePassed;
     private Vector3 originalPos;
 
+    public bool pressed = false;
     public bool active;
 
     // Use this for initialization
@@ -27,7 +28,7 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<ObstacleActivated>().activated)
+        if (pressed)
         {
             if (active)
             {
@@ -42,7 +43,7 @@ public class ObstacleScript : MonoBehaviour {
 
             if (timePassed > 1.0f)
             {
-                GetComponent<ObstacleActivated>().activated = false;
+                pressed = false;
                 active = !active;
                 timePassed = 0.0f;
             }
