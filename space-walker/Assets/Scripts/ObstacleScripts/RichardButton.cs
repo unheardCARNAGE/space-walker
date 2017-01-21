@@ -33,7 +33,7 @@ public class RichardButton : MonoBehaviour {
             clickable = true;
 
             //Temporary, Placeholder
-            button_notification = Instantiate<GameObject>(buttonNotification, gameObject.transform.position, Quaternion.identity);
+            //button_notification = Instantiate<GameObject>(buttonNotification, gameObject.transform.position, Quaternion.identity);
         }
     }
 
