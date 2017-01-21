@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-    public int health = 100;
     public float movementSpeed = 0.05f;
-    public float maxRayDistance = 200.0f;
+    public float maxRayDistance = 100.0f;
 
     public Transform light;
 
@@ -19,12 +18,13 @@ public class PlayerScript : MonoBehaviour {
     {
         //Ray casting
 
-        Ray ray = new Ray(transform.position, -light.transform.forward);
+        //Ray ray = new Ray(transform.position, -light.transform.forward);
+        Ray ray = new Ray(transform.position, transform.position + Vector3.forward * maxRayDistance + Vector3.up * maxRayDistance);
 
         RaycastHit hit;
 
         //Debug.DrawLine()
-        Debug.DrawLine(transform.position, transform.position + Vector3.forward * maxRayDistance + Vector3.up * maxRayDistance, Color.red, 100f, false);
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * maxRayDistance + Vector3.up * maxRayDistance, Color.red);
 
         if (Physics.Raycast(ray, out hit, maxRayDistance))
         {
@@ -64,7 +64,7 @@ public class PlayerScript : MonoBehaviour {
                     0,
                     -movementSpeed);
             }
-        //Up
+        //Right
             if (Input.GetKey(KeyCode.D))
             {
                 newPos += new Vector3(
