@@ -8,6 +8,12 @@ public class CameraScript : MonoBehaviour {
     public float smoothTime = 0.3f;
 
     private Vector3 velocity = Vector3.zero;
+
+	void Start(){
+		if(offset == -1f){
+			offset = player.position.z - transform.position.z;
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
