@@ -14,9 +14,9 @@ public class RichardButton : MonoBehaviour {
         }
 
         foreach (GameObject obstacle in obstacleAry) {
-            if (!obstacle.GetComponent<ObstacleActivated>().active)
+            if (!obstacle.GetComponent<ObstacleActivated>().activated)
             {
-                obstacle.GetComponent<ObstacleActivated>().active = true;
+                obstacle.GetComponent<ObstacleActivated>().activated = true;
             }
         }
     }
