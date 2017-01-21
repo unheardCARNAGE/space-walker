@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RichardButton : MonoBehaviour {
+public class TransformButton : MonoBehaviour {
     public ObstacleScript[] obstacleAry;
     public bool clickable;
 
@@ -10,16 +10,15 @@ public class RichardButton : MonoBehaviour {
     //Temporary, Placeholder
     public GameObject buttonNotification;
     private GameObject button_notification;
-    
-    void OnMouseUp()
-    {
-        if (!clickable)
-        {
-            return;
-        }
 
-        foreach (ObstacleScript obstacle in obstacleAry) {
-            obstacle.running = true;
+    void Update()
+    {
+        if (clickable && Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (ObstacleScript obstacle in obstacleAry)
+            {
+                obstacle.running = true;
+            }
         }
     }
 
