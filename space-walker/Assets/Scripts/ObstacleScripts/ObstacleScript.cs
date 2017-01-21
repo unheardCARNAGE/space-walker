@@ -27,7 +27,7 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<ObstacleActivated>().active)
+        if (GetComponent<ObstacleActivated>().activated)
         {
             if (active)
             {
