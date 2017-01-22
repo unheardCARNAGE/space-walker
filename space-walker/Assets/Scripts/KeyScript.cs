@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour {
 
     //When the user gets the key, the key's name should be pushed into the PlayerScript's List receivedKeys.
-    //Once the keys are added into a specific button, the key in the receivedKeys should be popped out.
+    //Once the keys are added into a specific button, the key's name in the receivedKeys should be popped out.
 
     public GameObject player;
 
