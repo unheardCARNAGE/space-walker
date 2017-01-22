@@ -18,8 +18,6 @@ public class PlayerScript : MonoBehaviour {
 	public static bool hasSaveStart = false;
     public static Vector3 saveLocation;
 
-    public bool winCondition = false;
-
 	bool isDead = false;
 	float respawnTimer = 0f;
 	public float deathTime = 4f;
@@ -50,7 +48,7 @@ public class PlayerScript : MonoBehaviour {
             }
 
             transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
-        } else if (winCondition) {
+        } else if (WinScript.hasWon) {
             // turn winCondition true with last button
             // create win screen
         } else if (respawnTimer < deathTime) {
