@@ -21,7 +21,7 @@ public class KeyScript : MonoBehaviour {
         if (can_be_carried && Input.GetKey(KeyCode.Space))
         {
                 Debug.Log("player has the key");
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject);
                 player.GetComponent<PlayerScript>().receivedKeys.Add(gameObject.name);
         }
 

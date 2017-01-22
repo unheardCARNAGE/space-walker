@@ -692,8 +692,8 @@ GameObject:
   - component: {fileID: 1718899326}
   - component: {fileID: 1718899325}
   - component: {fileID: 1718899324}
-  - component: {fileID: 1718899323}
   - component: {fileID: 1718899328}
+  - component: {fileID: 1718899323}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -709,14 +709,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1718899322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889403493d264e04198dbd9eba4dc12d, type: 3}
+  m_Script: {fileID: 11500000, guid: 58be6eccd3e4e45b68c6414f2429b4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadScene: 
   receivedKeys: []
   movementSpeed: 50
-  maxRayDistance: 200
-  wave: {fileID: 281420856}
+  maxRayDistance: 100
+  wave: {fileID: 0}
+  deathTime: 4
+  corpse: {fileID: 0}
 --- !u!23 &1718899324
 MeshRenderer:
   m_ObjectHideFlags: 0
