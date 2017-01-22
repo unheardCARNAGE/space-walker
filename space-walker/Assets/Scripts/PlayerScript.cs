@@ -14,11 +14,18 @@ public class PlayerScript : MonoBehaviour {
 
     public Transform wave;
 
-    public static Vector3 saveLocation = new Vector3 (0, 5, 0);
+	public static bool hasSaveStart = false;
+    public static Vector3 saveLocation;
 
     void Start()
     {
-        transform.position = saveLocation;
+		Debug.Log("Start Called with: " + hasSaveStart);
+		if (!hasSaveStart){
+			saveLocation = transform.position;
+			hasSaveStart = true;
+		} else{
+			transform.position = saveLocation;
+		}
     }
 
     // Update is called once per frame
@@ -40,15 +47,7 @@ public class PlayerScript : MonoBehaviour {
         if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
         {
             // play death animation
-            SceneManager.LoadScene("RichardBut");
-        }
-    }
-
-    void OnTriggerEnter(Collider coll)
-    {
-        if (coll.gameObject.name == "Checkpoint")
-        {
-            saveLocation = coll.transform.position;
+            SceneManager.LoadScene("SpaceStation");
         }
     }
 }
