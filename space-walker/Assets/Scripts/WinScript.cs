@@ -10,6 +10,7 @@ public class WinScript : MonoBehaviour {
 	[SerializeField] TransformButton lastButton;
 	[SerializeField] float timePerCharacter = .1f;
 	[SerializeField] Text winText;
+	[SerializeField] float timeAfterCredits = 4f;
 
 	bool buttonOne = false;
 	bool buttonTwo = false;
@@ -19,9 +20,6 @@ public class WinScript : MonoBehaviour {
 	public void Win(){
 		hasWon = true;
 		//player control is removed in the player script already
-
-		//win overlay
-		//roll credits
 	}
 
 	void Start(){
@@ -37,6 +35,10 @@ public class WinScript : MonoBehaviour {
 			//update the win text
 			int currentLength = Mathf.Min((int)(textTimer / timePerCharacter), winString.Length);
 			winText.text = winString.Substring(0, currentLength);
+
+			if(textTimer - currentLength > 0f){
+
+			}
 		}
 	}
 
