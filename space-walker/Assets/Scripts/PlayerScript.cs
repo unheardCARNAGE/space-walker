@@ -18,17 +18,13 @@ public class PlayerScript : MonoBehaviour {
 	public static bool hasSaveStart = false;
     public static Vector3 saveLocation;
 
-    //private bool pause;
-    //public Rect windowRect = new Rect(20, 20, 120, 50);
-
-	PlayerDeath pd;
-	public float deathDuration = 4f;
-	float respawnTimer = 0f;
-	bool isDead = false;
+	/*
+    private bool pause;
+    public Rect windowRect = new Rect(20, 20, 120, 50);
+    */
 
     void Start()
     {
-		pd = GetComponent<PlayerDeath>();
 		Debug.Log("Start Called with: " + hasSaveStart);
 		if (!hasSaveStart){
 			saveLocation = transform.position;
@@ -41,15 +37,15 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		if (!isDead){
-			move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-			if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f){
-				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
-			}
+        
 
-			transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
-		}
+        move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
+        }
 
+        transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
     }
 
     public void CreateRay()
@@ -62,16 +58,10 @@ public class PlayerScript : MonoBehaviour {
 
         if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
         {
-			OnDeath();
+            // play death animation
+            SceneManager.LoadScene(loadScene);
         }
     }
-
-	void OnDeath(){
-		// play death animation
-		CameraScript.mainCamera.enabled = false;
-		pd.Shatter();
-		SceneManager.LoadScene(loadScene);
-	}
 
 	/*
     void OnGUI()
