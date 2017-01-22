@@ -74,14 +74,20 @@ public class PlayerScript : MonoBehaviour {
 		isDead = true;
 		GetComponent<Collider>().enabled = false;
 		GetComponent<Rigidbody>().useGravity = false;
-		MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
-		foreach (MeshRenderer mr in renderers){
+		SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+		foreach (SkinnedMeshRenderer mr in renderers){
 			Debug.Log("Hiding Part");
 			mr.enabled = false;
 		}
 		GameObject o = GameObject.Instantiate<GameObject>(corpse);
 		o.transform.position = transform.position;
 		o.transform.rotation = transform.rotation;
+
+		Rigidbody[] parts = o.GetComponentsInChildren<Rigidbody>();
+		foreach(Rigidbody part in parts){
+			part.AddForceAtPosition(new Vector3(0f, Random.Range(.25f, .5f), Random.Range(-1.5f, -1f)) * 500f,
+				Random.onUnitSphere);
+		}
 	}
 
 	void Respawn(){
