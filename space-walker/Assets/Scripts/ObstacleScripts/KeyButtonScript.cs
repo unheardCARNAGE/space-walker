@@ -6,7 +6,6 @@ public class KeyButtonScript : MonoBehaviour {
 
     public string keyName;
     public GameObject player;
-    public bool isClickable;
 
 	// Use this for initialization
 	void Start () {
@@ -27,10 +26,11 @@ public class KeyButtonScript : MonoBehaviour {
                 if(keyName == key)
                 {
                     Debug.Log("door can be opened");
-                    isClickable = true;
-                    break;
+                    GetComponent<TransformButton>().clickable = true;
+                    return;
                 }
             }
+            GetComponent<TransformButton>().clickable = false;
         }
     }
 }

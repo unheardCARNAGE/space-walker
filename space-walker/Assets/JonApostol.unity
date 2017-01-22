@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 353636039}
   - component: {fileID: 353636038}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BlueKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,6 +447,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &825821721 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1865048954526258, guid: 5374ee45129a40d45ac238373465410c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1768252063}
+--- !u!114 &825821728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825821721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8377b9fa6fbddce458af33ad6444fdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: BlueKey
+  player: {fileID: 1718899322}
+  isClickable: 0
 --- !u!1 &1466560484
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +834,21 @@ Prefab:
       value: 
       objectReference: {fileID: 1549745024932148, guid: dd98d11977c9f0142b588e1c2b8d1363,
         type: 2}
+    - target: {fileID: 114005588075998692, guid: 5374ee45129a40d45ac238373465410c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135758676560264776, guid: 5374ee45129a40d45ac238373465410c,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 135758676560264776, guid: 5374ee45129a40d45ac238373465410c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5374ee45129a40d45ac238373465410c, type: 2}
   m_IsPrefabParent: 0
