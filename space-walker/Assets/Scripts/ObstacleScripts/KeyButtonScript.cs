@@ -33,4 +33,9 @@ public class KeyButtonScript : MonoBehaviour {
             GetComponent<TransformButton>().clickable = false;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<TransformButton>().clickable = false;
+    }
 }
