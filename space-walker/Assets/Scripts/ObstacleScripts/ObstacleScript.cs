@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour {
 	public Vector3 activeOffset;
+	public bool relativeRotation = false;
     public float movementDuration = 3f;
 
     private float timePassed = 0f;
@@ -15,6 +16,10 @@ public class ObstacleScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+		if(relativeRotation){
+			activeOffset = transform.rotation * activeOffset;
+		}
+
         originalPos = transform.position;
 
         if (active)

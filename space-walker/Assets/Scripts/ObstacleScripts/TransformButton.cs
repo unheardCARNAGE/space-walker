@@ -8,8 +8,8 @@ public class TransformButton : MonoBehaviour {
 
 
     //Temporary, Placeholder
-    public GameObject buttonNotification;
-    private GameObject button_notification;
+	public GameObject buttonNotification = null;
+    private GameObject button_notification = null;
 
     void Update()
     {
@@ -29,7 +29,9 @@ public class TransformButton : MonoBehaviour {
             clickable = true;
 
             //Temporary, Placeholder
-            button_notification = Instantiate<GameObject>(buttonNotification, gameObject.transform.position, Quaternion.identity);
+			if(buttonNotification != null){
+				button_notification = Instantiate<GameObject>(buttonNotification, gameObject.transform.position, Quaternion.identity);
+			}
         }
     }
 
@@ -40,7 +42,9 @@ public class TransformButton : MonoBehaviour {
             clickable = false;
 
             //Temporary, Placeholder
-            Destroy(button_notification, 1.0f);
+			if (button_notification != null){
+				Destroy(button_notification, 1.0f);
+			}
         }
     }
 }
