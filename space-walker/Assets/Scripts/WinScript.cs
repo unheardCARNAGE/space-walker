@@ -7,9 +7,12 @@ public class WinScript : MonoBehaviour {
 
 	public static bool hasWon = false;
 
-	[SerializeField] float timePerCharacter = .3f;
+	[SerializeField] TransformButton lastButton;
+	[SerializeField] float timePerCharacter = .1f;
 	[SerializeField] Text winText;
 
+	bool buttonOne = false;
+	bool buttonTwo = false;
 	float textTimer = 0f;
 	string winString;
 
@@ -24,6 +27,7 @@ public class WinScript : MonoBehaviour {
 	void Start(){
 		winString = winText.text;
 		winText.text = "";
+		lastButton.enabled = false;
 	}
 
 	void Update(){
@@ -38,5 +42,21 @@ public class WinScript : MonoBehaviour {
 
 	public void WinButtonPressed(){
 		Win();
+	}
+
+	public void ButtonOnePressed(){
+		buttonOne = true;
+		CheckEnableWinButton();
+	}
+
+	public void ButtonTwoPressed(){
+		buttonTwo = true;
+		CheckEnableWinButton();
+	}
+
+	void CheckEnableWinButton(){
+		if (buttonOne && buttonTwo){
+			lastButton.enabled = true;
+		}
 	}
 }
