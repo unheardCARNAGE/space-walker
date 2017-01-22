@@ -25,6 +25,7 @@ public class EventManager : MonoBehaviour {
     }
 
   public void loadNext() {
+        menu.SetActive(false);
         SceneManager.LoadScene("SpaceStation");
   }
 
