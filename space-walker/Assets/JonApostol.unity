@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 353636040}
   - component: {fileID: 353636039}
   - component: {fileID: 353636038}
+  - component: {fileID: 353636043}
   m_Layer: 0
   m_Name: BlueKey
   m_TagString: Untagged
@@ -362,7 +363,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &353636041
 MeshFilter:
@@ -384,6 +385,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &353636043
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353636037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &488970690
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyName: BlueKey
   player: {fileID: 1718899322}
-  isClickable: 0
 --- !u!1 &1466560484
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,8 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1718899327}
-  offset: 25
   smoothTime: 0.3
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1714660010
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889403493d264e04198dbd9eba4dc12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: 
   receivedKeys: []
   movementSpeed: 50
   maxRayDistance: 200
@@ -837,7 +855,7 @@ Prefab:
     - target: {fileID: 114005588075998692, guid: 5374ee45129a40d45ac238373465410c,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135758676560264776, guid: 5374ee45129a40d45ac238373465410c,
         type: 2}

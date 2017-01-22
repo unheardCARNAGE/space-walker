@@ -9,6 +9,8 @@ public class KeyScript : MonoBehaviour {
 
     public GameObject player;
 
+    private bool can_be_carried;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,16 +18,29 @@ public class KeyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (can_be_carried && Input.GetKey(KeyCode.Space))
+        {
+                Debug.Log("player has the key");
+                Destroy(gameObject, 0.5f);
+                player.GetComponent<PlayerScript>().receivedKeys.Add(gameObject.name);
+        }
+
+
+    }
 
     void OnTriggerEnter(Collider collision)
     {
         if (collision.name == "Player")
         {
-            Debug.Log("player has the key");
-            Destroy(gameObject, 0.5f);
-            player.GetComponent<PlayerScript>().receivedKeys.Add(gameObject.name);
+            can_be_carried = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            can_be_carried = false;
         }
     }
 }
