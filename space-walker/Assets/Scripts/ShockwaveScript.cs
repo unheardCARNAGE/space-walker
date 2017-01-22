@@ -32,7 +32,7 @@ public class ShockwaveScript : MonoBehaviour {
     UnityEvent onFlashEvent;
 
     PlayerScript player;
-    PebbleScript pebble;
+    PebbleScript[] pebbleArys;
     Light light;
     float currentTime = 0f;
     bool flashpointDoneThisCycle = false;
@@ -40,7 +40,7 @@ public class ShockwaveScript : MonoBehaviour {
     void Start()
     {
         player = FindObjectOfType<PlayerScript>();
-        pebble = FindObjectOfType<PebbleScript>();
+        pebbleArys = FindObjectsOfType<PebbleScript>();
         light = GetComponent<Light>();
     }
 
@@ -115,6 +115,9 @@ public class ShockwaveScript : MonoBehaviour {
         if (onFlashEvent != null)
             onFlashEvent.Invoke();
         player.CreateRay();
-        pebble.CreateRay();
+        foreach (PebbleScript pebble in pebbleArys)
+        {
+            pebble.CreateRay();
+        }
     }
 }
