@@ -87,6 +87,7 @@ public class PlayerScript : MonoBehaviour {
 		foreach(Rigidbody part in parts){
 			part.AddForceAtPosition(new Vector3(0f, Random.Range(.25f, .5f), Random.Range(-1.5f, -1f)) * 500f,
 				Random.onUnitSphere);
+
 		}
 	}
 

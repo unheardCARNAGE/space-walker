@@ -6,6 +6,11 @@ public class PebbleScript : MonoBehaviour {
     public Transform wave;
     public float maxRayDistance = 100.0f;
 
+	void Start(){
+		wave = FindObjectOfType<ShockwaveScript>().transform;
+		//wave = ShockwaveScript.shockwave.transform;
+	}
+
     public void CreateRay()
     {
         Ray ray = new Ray(transform.position, -wave.transform.forward);
