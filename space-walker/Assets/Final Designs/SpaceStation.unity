@@ -362,8 +362,13 @@ Transform:
   m_LocalPosition: {x: 19.08, y: 0.5, z: 0.18}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 0}
   m_RootOrder: 7
+=======
+  m_Father: {fileID: 2041773195}
+  m_RootOrder: 10
+>>>>>>> parent of 3359a7e... Level Design
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161444060
 GameObject:
@@ -1418,6 +1423,7 @@ MeshFilter:
   m_GameObject: {fileID: 741941049}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &752697282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1592,8 @@ MeshFilter:
 >>>>>>> origin/master
 =======
 >>>>>>> parent of 3359a7e... Level Design
+=======
+>>>>>>> parent of 3359a7e... Level Design
 --- !u!1 &786239790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,7 +1665,10 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 3359a7e... Level Design
 =======
 >>>>>>> parent of 3359a7e... Level Design
 --- !u!4 &786239794
@@ -1667,6 +1678,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786239790}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 4.5}
   m_LocalScale: {x: 5, y: 4, z: 1}
@@ -1674,12 +1686,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
 =======
+=======
+>>>>>>> parent of 3359a7e... Level Design
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -26.09, y: 2, z: 24.53}
   m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 2041773195}
   m_RootOrder: 7
+<<<<<<< HEAD
+>>>>>>> parent of 3359a7e... Level Design
+=======
 >>>>>>> parent of 3359a7e... Level Design
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &786239795
@@ -1699,7 +1716,10 @@ MonoBehaviour:
   running: 0
   active: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 3359a7e... Level Design
 =======
 >>>>>>> parent of 3359a7e... Level Design
 --- !u!1 &893659329
@@ -2025,8 +2045,13 @@ Transform:
   m_LocalPosition: {x: 15.65, y: 2, z: -2.52}
   m_LocalScale: {x: 0.3, y: 4, z: 3}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 0}
   m_RootOrder: 14
+=======
+  m_Father: {fileID: 2041773195}
+  m_RootOrder: 4
+>>>>>>> parent of 3359a7e... Level Design
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1107174431
 Prefab:
@@ -2067,6 +2092,7 @@ Prefab:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4565129004794954, guid: 069ab0836f1844be1afce4bf1a57cae1, type: 2}
@@ -2079,6 +2105,9 @@ Prefab:
 =======
       value: 15
 >>>>>>> origin/master
+=======
+      value: 3
+>>>>>>> parent of 3359a7e... Level Design
 =======
       value: 3
 >>>>>>> parent of 3359a7e... Level Design
@@ -2226,12 +2255,21 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142496430}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: -2.16}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.09, y: 0.5, z: 17.87}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2041773195}
+  m_RootOrder: 6
+>>>>>>> parent of 3359a7e... Level Design
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1142496435
 MonoBehaviour:
@@ -2329,6 +2367,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1174049672}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1174527528
@@ -2412,6 +2451,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1285352791
+=======
+  m_GameObject: {fileID: 1151107264}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1151107268
+>>>>>>> parent of 3359a7e... Level Design
 =======
   m_GameObject: {fileID: 1151107264}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -3096,6 +3140,7 @@ MeshFilter:
   m_GameObject: {fileID: 1605391788}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1623286016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,6 +3224,8 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 3359a7e... Level Design
 =======
 >>>>>>> parent of 3359a7e... Level Design
 --- !u!1 &1743937229
@@ -3418,10 +3465,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 3
 =======
   m_RootOrder: 16
 >>>>>>> origin/master
+=======
+  m_RootOrder: 4
+>>>>>>> parent of 3359a7e... Level Design
 =======
   m_RootOrder: 4
 >>>>>>> parent of 3359a7e... Level Design
@@ -3535,12 +3586,16 @@ Transform:
   - {fileID: 106679966}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 4
 =======
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
 >>>>>>> origin/master
+=======
+  m_RootOrder: 5
+>>>>>>> parent of 3359a7e... Level Design
 =======
   m_RootOrder: 5
 >>>>>>> parent of 3359a7e... Level Design
