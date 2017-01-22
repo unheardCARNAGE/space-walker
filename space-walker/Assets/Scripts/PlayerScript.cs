@@ -35,17 +35,7 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pause = !pause;
-            if (pause)
-            {
-                Time.timeScale = 0f;
-            } else
-            {
-                Time.timeScale = 1f;
-            }
-        }
+        
 
         move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f)

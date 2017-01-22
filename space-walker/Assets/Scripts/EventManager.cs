@@ -4,6 +4,8 @@ using System.Collections;
 
 public class EventManager : MonoBehaviour {
 
+    public GameObject menu;
+    public GameObject player;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,6 +15,14 @@ public class EventManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void resume()
+    {
+        Time.timeScale = 1f;
+        player.GetComponent<PauseMenu>().isShowing = false;
+        menu.SetActive(player.GetComponent<PauseMenu>().isShowing);
+      
+    }
 
   public void loadNext() {
         SceneManager.LoadScene("SpaceStation");
