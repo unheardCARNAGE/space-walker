@@ -18,6 +18,9 @@ public class PlayerScript : MonoBehaviour {
 	public static bool hasSaveStart = false;
     public static Vector3 saveLocation;
 
+    private bool pause;
+    public Rect windowRect = new Rect(20, 20, 120, 50);
+
     void Start()
     {
 		Debug.Log("Start Called with: " + hasSaveStart);
@@ -32,17 +35,23 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = !pause;
+            if (pause)
+            {
+                Time.timeScale = 0f;
+            } else
+            {
+                Time.timeScale = 1f;
+            }
+        }
+
         move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
         }
-
-        /*if (Input.GetKey(KeyCode.D))
-        {
-            if(transform.rotation.x < 90)
-                transform.Rotate(Vector3.Lerp());
-        }*/
 
         transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
     }
@@ -60,5 +69,19 @@ public class PlayerScript : MonoBehaviour {
             // play death animation
             SceneManager.LoadScene(loadScene);
         }
+    }
+
+    void OnGUI()
+    {
+        if (pause)
+        {
+            GUI.Window(0, windowRect, TheMainMenu, "The Pause Menu");
+        }
+    }
+
+    void TheMainMenu(int windowID)
+    {
+        if (GUI.Button(new Rect(10, 20, 100, 20), "Hello World"))
+            print("Got a click");
     }
 }
