@@ -40,7 +40,7 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(soundForFinish);
+        //Debug.Log(soundForFinish);
         if (running)
         {
             if (soundForWall != null)

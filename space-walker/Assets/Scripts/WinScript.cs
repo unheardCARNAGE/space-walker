@@ -11,6 +11,7 @@ public class WinScript : MonoBehaviour {
 	[SerializeField] float timePerCharacter = .1f;
 	[SerializeField] Text winText;
 	[SerializeField] float timeAfterCredits = 4f;
+	[SerializeField] Image blackScreen;
 
 	bool buttonOne = false;
 	bool buttonTwo = false;
@@ -37,7 +38,8 @@ public class WinScript : MonoBehaviour {
 			winText.text = winString.Substring(0, currentLength);
 
 			if(textTimer - currentLength > 0f){
-
+				float alpha = 2 * (textTimer - currentLength) / timeAfterCredits;
+				blackScreen.color = new Color(0,0,0,alpha);
 			}
 		}
 	}
