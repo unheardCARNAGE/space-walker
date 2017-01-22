@@ -6,6 +6,8 @@ public class ObstacleScript : MonoBehaviour {
 	public Vector3 activeOffset;
 	public bool relativeRotation = false;
     public float movementDuration = 3f;
+	//public bool canBeUndone = true;
+	//private bool hasBeenUsed = false;
 
     private float timePassed = 0f;
     private Vector3 originalPos;
@@ -31,7 +33,7 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (running)
+		if (running)
         {
 			timePassed += Time.deltaTime;
             if (active)

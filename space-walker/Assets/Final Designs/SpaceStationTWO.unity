@@ -478,6 +478,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 959719011}
     m_Modifications:
+    - target: {fileID: 114069123133796042, guid: fc7509372d4af417bbc364c0db58525c,
+        type: 2}
+      propertyPath: obstacleAry.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4415431411973852, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.31
@@ -748,6 +753,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 4
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1 &182071625
@@ -864,6 +870,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 0.2
+  canBeUndone: 1
   running: 0
   active: 0
 --- !u!23 &216147595
@@ -1108,6 +1115,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3.8, z: 0}
   relativeRotation: 0
   movementDuration: 8
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1001 &247916960
@@ -2737,6 +2745,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 6
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1 &544660061
@@ -3585,6 +3594,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 4
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1 &738093034
@@ -4075,6 +4085,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 1
+  canBeUndone: 1
   running: 0
   active: 0
 --- !u!1001 &808934536
@@ -4503,6 +4514,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 2
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1 &926451315
@@ -7522,6 +7534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120ddd544c4824fda86e4cf761b8dd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastButton: {fileID: 0}
   timePerCharacter: 0.1
   winText: {fileID: 2047982543}
 --- !u!4 &1475758055
@@ -7633,6 +7646,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 6
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1 &1516271544
@@ -8681,19 +8695,19 @@ Prefab:
       objectReference: {fileID: 1571025260}
     - target: {fileID: 4306857275801756, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.45602098
+      value: 0.456021
       objectReference: {fileID: 0}
     - target: {fileID: 4306857275801756, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.037960224
+      value: 0.037960228
       objectReference: {fileID: 0}
     - target: {fileID: 4306857275801756, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.01947337
+      value: -0.019473372
       objectReference: {fileID: 0}
     - target: {fileID: 4306857275801756, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.88894576
+      value: 0.8889458
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
@@ -9060,6 +9074,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 959719011}
     m_Modifications:
+    - target: {fileID: 114069123133796042, guid: fc7509372d4af417bbc364c0db58525c,
+        type: 2}
+      propertyPath: obstacleAry.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4415431411973852, guid: fc7509372d4af417bbc364c0db58525c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 7.38
@@ -9371,6 +9390,7 @@ MonoBehaviour:
   activeOffset: {x: 0, y: -3, z: 0}
   relativeRotation: 0
   movementDuration: 2
+  canBeUndone: 0
   running: 0
   active: 0
 --- !u!1001 &1832844193
