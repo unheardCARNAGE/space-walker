@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour {
 
+    //When the user gets the key, the key's name should be pushed into the PlayerScript's List receivedKeys.
+    //Once the keys are added into a specific button, the key in the receivedKeys should be popped out.
+
     public GameObject player;
 
 	// Use this for initialization
@@ -22,6 +25,7 @@ public class KeyScript : MonoBehaviour {
         {
             Debug.Log("player has the key");
             Destroy(gameObject, 0.5f);
+            player.GetComponent<PlayerScript>().receivedKeys.Add(gameObject.name);
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
+    public List<string> receivedKeys;
+
     public float movementSpeed = 50f;
     public float maxRayDistance = 100.0f;
 
