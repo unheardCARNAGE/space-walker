@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour {
-    public float xDir;
-    public float yDir;
-    public float zDir;
-    public float movementSpeed = 3f;
+	public Vector3 activeOffset;
+    public float movementDuration = 3f;
 
-    private float timePassed;
+    private float timePassed = 0f;
     private Vector3 originalPos;
 
     public bool running = false;
@@ -21,7 +19,7 @@ public class ObstacleScript : MonoBehaviour {
 
         if (active)
         {
-            originalPos -= new Vector3(xDir, yDir, zDir);
+            originalPos -= activeOffset;
         }
     }
 
@@ -30,22 +28,21 @@ public class ObstacleScript : MonoBehaviour {
     {
         if (running)
         {
+			timePassed += Time.deltaTime;
             if (active)
             {
-                transform.position = new Vector3(Mathf.Lerp(originalPos.x + xDir, originalPos.x, timePassed), Mathf.Lerp(originalPos.y + yDir, originalPos.y, timePassed), Mathf.Lerp(originalPos.z + zDir, originalPos.z, timePassed));
-                timePassed += movementSpeed * Time.deltaTime;
+				transform.position = Vector3.Lerp(originalPos + activeOffset, originalPos, timePassed / movementDuration);
             }
             else
             {
-                transform.position = new Vector3(Mathf.Lerp(originalPos.x, originalPos.x + xDir, timePassed), Mathf.Lerp(originalPos.y, originalPos.y + yDir, timePassed), Mathf.Lerp(originalPos.z, originalPos.z + zDir, timePassed));
-                timePassed += movementSpeed * Time.deltaTime;
+				transform.position = Vector3.Lerp(originalPos, originalPos + activeOffset, timePassed / movementDuration);
             }
 
-            if (timePassed > 1.0f)
+            if (timePassed > movementDuration)
             {
                 running = false;
                 active = !active;
-                timePassed = 0.0f;
+                timePassed = 0f;
             }
         }
     }
