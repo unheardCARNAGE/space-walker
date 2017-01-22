@@ -18,6 +18,11 @@ public class PlayerScript : MonoBehaviour {
 	public static bool hasSaveStart = false;
     public static Vector3 saveLocation;
 
+	bool isDead = false;
+	float respawnTimer = 0f;
+	public float deathTime = 4f;
+	public GameObject corpse;
+
 	/*
     private bool pause;
     public Rect windowRect = new Rect(20, 20, 120, 50);
@@ -35,33 +40,53 @@ public class PlayerScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+		if (!isDead){
+			move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+			if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f){
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
+			}
 
-        move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
-        }
-
-        transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
+			transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
+		} else if (respawnTimer < deathTime){
+			respawnTimer += Time.deltaTime;
+		} else{
+			Respawn();
+		}
     }
 
     public void CreateRay()
-    {
+	{
         Ray ray = new Ray(transform.position, -wave.transform.forward);
 
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, -wave.transform.forward * maxRayDistance, Color.red);
 
-        if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
+        if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")) && !isDead)
         {
             // play death animation
-            SceneManager.LoadScene(loadScene);
+			OnDeath();
         }
     }
+
+	void OnDeath(){
+		isDead = true;
+		GetComponent<Collider>().enabled = false;
+		GetComponent<Rigidbody>().useGravity = false;
+		MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer mr in renderers){
+			Debug.Log("Hiding Part");
+			mr.enabled = false;
+		}
+		GameObject o = GameObject.Instantiate<GameObject>(corpse);
+		o.transform.position = transform.position;
+		o.transform.rotation = transform.rotation;
+	}
+
+	void Respawn(){
+		SceneManager.LoadScene(loadScene);
+	}
 
 	/*
     void OnGUI()
