@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour {
 	}
 
   public void loadNext() {
-        SceneManager.LoadScene("TimothyHarvey");
+        SceneManager.LoadScene("SpaceStation");
   }
 
 
