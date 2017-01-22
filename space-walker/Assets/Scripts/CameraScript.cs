@@ -9,8 +9,11 @@ public class CameraScript : MonoBehaviour {
 
     private Vector3 velocity = Vector3.zero;
 
+	public static CameraScript mainCamera;
+
     void Start()
     {
+		mainCamera = this;
         originalPos = transform.position;
         transform.position = player.transform.position + transform.position;
     }

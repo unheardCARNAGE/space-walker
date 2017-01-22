@@ -6,6 +6,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Light))]
 
 public class ShockwaveScript : MonoBehaviour {
+
+	public static ShockwaveScript shockwave;
+
     [SerializeField]
     float totalCycleTime = 8f;
     [SerializeField]
@@ -39,6 +42,7 @@ public class ShockwaveScript : MonoBehaviour {
 
     void Start()
     {
+		shockwave = this;
         player = FindObjectOfType<PlayerScript>();
         pebbleArys = FindObjectsOfType<PebbleScript>();
         light = GetComponent<Light>();

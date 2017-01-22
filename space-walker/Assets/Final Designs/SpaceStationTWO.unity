@@ -468,6 +468,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af10785caef394c2db66a685ca6a4259, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &135129227 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1085633222665578, guid: af10785caef394c2db66a685ca6a4259,
+    type: 2}
+  m_PrefabInternal: {fileID: 135129226}
+--- !u!114 &135129228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135129227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc3812dfebb84f17b0f7776a5486b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &135129231 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4125969017900102, guid: af10785caef394c2db66a685ca6a4259,
@@ -484,7 +500,7 @@ GameObject:
   - component: {fileID: 161444061}
   - component: {fileID: 161444063}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Shockwave Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
