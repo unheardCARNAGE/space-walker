@@ -217,9 +217,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeOffset: {x: 0, y: 0, z: -1}
+  relativeRotation: 0
   movementDuration: 3
   running: 0
   active: 0
+  soundOnOpening: {fileID: 0}
+  soundOnClosing: {fileID: 0}
+  soundForWall: {fileID: 0}
+  soundForFinish: {fileID: 0}
 --- !u!114 &114589739204618944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,6 +237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeOffset: {x: 0, y: 0, z: 1}
+  relativeRotation: 0
   movementDuration: 3
   running: 0
   active: 0
+  soundOnOpening: {fileID: 0}
+  soundOnClosing: {fileID: 0}
+  soundForWall: {fileID: 0}
+  soundForFinish: {fileID: 0}

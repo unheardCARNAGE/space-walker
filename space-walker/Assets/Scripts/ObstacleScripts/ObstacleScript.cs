@@ -13,9 +13,18 @@ public class ObstacleScript : MonoBehaviour {
     public bool running = false;
     public bool active;
 
+    public AudioClip soundOnOpening = null;
+    public AudioClip soundOnClosing = null;
+    public AudioClip soundForWall = null;
+    public AudioClip soundForFinish = null;
+
+    AudioSource music;
+
     // Use this for initialization
     void Start()
     {
+        music = GetComponent<AudioSource>();
+
 		if(relativeRotation){
 			activeOffset = transform.rotation * activeOffset;
 		}
@@ -31,20 +40,39 @@ public class ObstacleScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(soundForFinish);
         if (running)
         {
-			timePassed += Time.deltaTime;
+            if (soundForWall != null)
+            {
+                music.PlayOneShot(soundForWall);
+            }
+
+            timePassed += Time.deltaTime;
             if (active)
             {
 				transform.position = Vector3.Lerp(originalPos + activeOffset, originalPos, timePassed / movementDuration);
+                if (soundOnOpening != null)
+                {
+                    music.PlayOneShot(soundOnOpening);
+                }
             }
             else
             {
 				transform.position = Vector3.Lerp(originalPos, originalPos + activeOffset, timePassed / movementDuration);
+                if (soundOnClosing != null)
+                {
+                    music.PlayOneShot(soundOnClosing);
+                }
             }
 
             if (timePassed > movementDuration)
             {
+                if (soundForFinish != null)
+                {
+                    music.Stop();
+                    music.PlayOneShot(soundForFinish);
+                }
                 running = false;
                 active = !active;
                 timePassed = 0f;
