@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotationButton : MonoBehaviour {
-    public ObstacleScript[] obstacleAry;
+    public RotationScript[] obstacleAry;
     public bool clickable;
 
-    void OnMouseUp()
+    void Update()
     {
-        if (!clickable)
+        if (clickable && Input.GetKeyDown(KeyCode.Space))
         {
-            return;
-        }
-
-        foreach (ObstacleScript obstacle in obstacleAry)
-        {
-            obstacle.running = true;
+            foreach (RotationScript obstacle in obstacleAry)
+            {
+                obstacle.running = true;
+            }
         }
     }
 
