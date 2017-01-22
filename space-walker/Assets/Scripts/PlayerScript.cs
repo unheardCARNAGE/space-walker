@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour {
 	public static bool hasSaveStart = false;
     public static Vector3 saveLocation;
 
+    public bool winCondition = false;
+
 	bool isDead = false;
 	float respawnTimer = 0f;
 	public float deathTime = 4f;
@@ -41,18 +43,21 @@ public class PlayerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-		if (!isDead){
-			move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-			if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f){
-				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
-			}
+        if (!isDead) {
+            move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f) {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
+            }
 
-			transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
-		} else if (respawnTimer < deathTime){
-			respawnTimer += Time.deltaTime;
-		} else{
-			Respawn();
-		}
+            transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
+        } else if (winCondition) {
+            // turn winCondition true with last button
+            // create win screen
+        } else if (respawnTimer < deathTime) {
+            respawnTimer += Time.deltaTime;
+        } else {
+            Respawn();
+        }
     }
 
     public void CreateRay()
@@ -94,20 +99,4 @@ public class PlayerScript : MonoBehaviour {
 	void Respawn(){
 		SceneManager.LoadScene(loadScene);
 	}
-
-	/*
-    void OnGUI()
-    {
-        if (pause)
-        {
-            GUI.Window(0, windowRect, TheMainMenu, "The Pause Menu");
-        }
-    }
-
-    void TheMainMenu(int windowID)
-    {
-        if (GUI.Button(new Rect(10, 20, 100, 20), "Hello World"))
-            print("Got a click");
-    }
-    */
 }
