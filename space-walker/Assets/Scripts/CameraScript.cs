@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
     public Transform player;
-    public float offset = 25f;
     public float smoothTime = 0.3f;
+    public Vector3 originalPos;
 
     private Vector3 velocity = Vector3.zero;
 
-	void Start(){
-		if(offset == -1f){
-			offset = player.position.z - transform.position.z;
-		}
-	}
+    void Start()
+    {
+        originalPos = transform.position;
+        transform.position = player.transform.position + transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 goalPos = player.position;
-        goalPos.z = player.position.z - offset;
-        goalPos.y = transform.position.y;
+        //transform.position = player.transform.position + new Vector3(height, 6, -distance);
+        //Vector3 goalPos = new Vector3(player.position.x, transform.position.y, dist);
 
-        transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
-	}
+        transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + originalPos, ref velocity, smoothTime);
+    }
 }

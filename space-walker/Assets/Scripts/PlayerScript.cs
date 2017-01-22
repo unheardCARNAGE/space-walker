@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
+    public string loadScene;
 
     public List<string> receivedKeys;
 
@@ -47,7 +48,7 @@ public class PlayerScript : MonoBehaviour {
         if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
         {
             // play death animation
-            SceneManager.LoadScene("SpaceStation");
+            SceneManager.LoadScene(loadScene);
         }
     }
 }
