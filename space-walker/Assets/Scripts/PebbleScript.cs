@@ -16,7 +16,8 @@ public class PebbleScript : MonoBehaviour {
 
         if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(0f, Random.Range(.25f, .5f), Random.Range(-1.5f, -1f)) * 500f);
+            GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(0f, Random.Range(.25f, .5f), Random.Range(-1.5f, -1f)) * 500f,
+				Random.onUnitSphere);
         }
     }
 }
