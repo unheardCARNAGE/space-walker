@@ -17,19 +17,26 @@ public class WinScript : MonoBehaviour {
 		hasWon = true;
 		//player control is removed in the player script already
 
-		//winText.text = ;
 		//win overlay
 		//roll credits
 	}
 
 	void Start(){
 		winString = winText.text;
+		winText.text = "";
 	}
 
 	void Update(){
 		if (WinScript.hasWon){
 			textTimer += Time.deltaTime;
-			winText.text = winString.Substring(0, textTimer / timePerCharacter);
+
+			//update the win text
+			int currentLength = Mathf.Min((int)(textTimer / timePerCharacter), winString.Length);
+			winText.text = winString.Substring(0, currentLength);
 		}
+	}
+
+	public void WinButtonPressed(){
+		Win();
 	}
 }

@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TransformButton : MonoBehaviour {
     public ObstacleScript[] obstacleAry;
     public bool clickable;
 
-
     //Temporary, Placeholder
 	public GameObject buttonNotification = null;
     private GameObject button_notification = null;
+
+	public UnityEvent onUse;
 
     void Update()
     {
@@ -19,6 +21,7 @@ public class TransformButton : MonoBehaviour {
             {
                 obstacle.running = true;
             }
+			onUse.Invoke();
         }
     }
 
