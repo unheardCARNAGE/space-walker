@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour {
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         transform.Translate(move * movementSpeed * Time.deltaTime);
-	}
+    }
 
     public void CreateRay()
     {
