@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -13,8 +14,16 @@ public class PlayerScript : MonoBehaviour {
 
     public Transform wave;
 
+    public static Vector3 saveLocation = new Vector3 (0, 5, 0);
+
+    void Start()
+    {
+        transform.position = saveLocation;
+    }
+
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         transform.Translate(move * movementSpeed * Time.deltaTime);
@@ -28,9 +37,18 @@ public class PlayerScript : MonoBehaviour {
 
         Debug.DrawRay(transform.position, -wave.transform.forward * maxRayDistance, Color.red);
 
-        if (!Physics.Raycast(ray, out hit, maxRayDistance))
+        if (!Physics.Raycast(ray, out hit, maxRayDistance, LayerMask.GetMask("Obstacle")))
         {
-            Debug.Log("Player dies");
+            // play death animation
+            SceneManager.LoadScene("RichardBut");
+        }
+    }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.name == "Checkpoint")
+        {
+            saveLocation = coll.transform.position;
         }
     }
 }
