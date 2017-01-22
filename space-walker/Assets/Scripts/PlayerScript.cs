@@ -32,9 +32,19 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (move.x == 1f || move.x == -1f || move.z == 1f || move.z == -1f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15f);
+        }
 
-        transform.Translate(move * movementSpeed * Time.deltaTime);
+        /*if (Input.GetKey(KeyCode.D))
+        {
+            if(transform.rotation.x < 90)
+                transform.Rotate(Vector3.Lerp());
+        }*/
+
+        transform.Translate(move * movementSpeed * Time.deltaTime, Space.World);
     }
 
     public void CreateRay()
